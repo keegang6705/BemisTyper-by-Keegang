@@ -7,7 +7,7 @@ import pyautogui
 import keyboard
 #import os
 
-class AutoTyperApp:
+class AutoTyperApp(tk.Frame):
     def __init__(self, master):
         self.master = master
         self.master.title("BemisTyper by keegang - Stopped")
@@ -49,14 +49,35 @@ class AutoTyperApp:
         # Add a start/stop button (spanning two columns)
         self.start_stop_button = tk.Button(master, text="Start Typing (F8)", command=self.toggle_start_stop)
         self.start_stop_button.grid(row=3, column=0, columnspan=3, padx=10, pady=10, sticky="nsew")
+        self.bind("<B1-Motion>", self.on_resize)
+        self.bind("<ButtonRelease-1>", self.stop_resizing)
 
-                # Configure row and column weights to make the grid stretch
+        # Set the resizing flag to False initially
+        self.resizing = False
         for i in range(3):  # Adjust the range based on your layout
             master.grid_rowconfigure(i, weight=1)
             master.grid_columnconfigure(i, weight=1)
 
         # Bind F8 key to the toggle_start_stop method
         keyboard.add_hotkey('F8', self.toggle_start_stop)
+
+    def on_resize(self, event):
+        if self.resizing:
+            # Calculate the new size based on the mouse position
+            new_width = self.winfo_pointerx() - self.winfo_rootx()
+            new_height = self.winfo_pointery() - self.winfo_rooty()
+
+            # Set the new size for the window
+            self.geometry(f"{new_width}x{new_height}")
+
+    def start_resizing(self, event):
+        # Set the resizing flag to True
+        self.resizing = True
+
+    def stop_resizing(self, event):
+        # Set the resizing flag to False
+        self.resizing = False
+
 
     def import_text_file(self):
         file_path = filedialog.askopenfilename(filetypes=[("Text Files", "*.txt")])
