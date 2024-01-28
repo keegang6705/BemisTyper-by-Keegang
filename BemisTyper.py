@@ -6,7 +6,7 @@ import time
 import pyautogui
 import keyboard
 #import os
-
+#1.0.2
 class AutoTyperApp(tk.Frame):
     def __init__(self, master):
         self.master = master
