@@ -5,16 +5,16 @@ import threading
 import time
 import pyautogui
 import keyboard
-import os
+#import os
 
 class AutoTyperApp:
     def __init__(self, master):
         self.master = master
         self.master.title("BemisTyper by keegang - Stopped")
 
-        icon_path = r"D:\keegang project\code\python\helpfull_program\be-mis proj\col_studio.ico"
-        if os.path.exists(icon_path):
-            self.master.iconbitmap(default=icon_path)
+        #icon_path = r"D:\keegang project\code\python\helpfull_program\be-mis proj\col_studio.ico"
+        #if os.path.exists(icon_path):
+        #    self.master.iconbitmap(default=icon_path)
 
         # Set the window size to 600x900
         self.master.geometry("500x300")
