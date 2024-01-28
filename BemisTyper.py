@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter.scrolledtext import ScrolledText
 import threading, time, pyautogui, keyboard #os
-version = "1.0.3"
+version = "1.1.0"
 
 class BemisTyperApp(tk.Frame):
     def __init__(self, master):
@@ -36,7 +36,7 @@ class BemisTyperApp(tk.Frame):
         self.import_button = tk.Button(master, text="Import Text File", command=self.import_text_file)
         self.import_button.grid(row=2, column=0, padx=10, pady=10, sticky=tk.W)
 
-        self.type_each_char_checkbox = tk.Checkbutton(master, text="Turbo mode (if use on slow device, it may cause data errors.)\nif turn on while program is running DON'T do anything", variable=self.turbo_mode)
+        self.type_each_char_checkbox = tk.Checkbutton(master, text="Turbo mode (if use on slow device, it may cause data errors.)", variable=self.turbo_mode)
         self.type_each_char_checkbox.grid(row=3, column=0, columnspan=3, sticky=tk.W)
 
         self.interval_label = tk.Label(master, text="Interval (seconds):")

@@ -1,6 +1,6 @@
 ('D:\\keegang '
  'project\\code\\python\\helpfull_program\\BemisTyper-by-Keegang\\build\\BemisTyper '
- 'By Keegang\\PYZ-00.pyz',
+ 'By Keegang1.1.0\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\darun\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),
